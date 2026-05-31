@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JaketKu — Formal & Outdoor</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">
+      <a href="paine.html">
+        <img src="../pic/upscalemedia-transformed.png" alt="Logo JaketKu" class="logo-img">
+      </a>
+    </div>
+
+    <a href="https://wa.me/6281234567890" target="_blank" class="nav-wa">
+      💬 WhatsApp
+    </a>
+  </nav>
+
+  <!-- HALAMAN UTAMA -->
+  <div id="page-home" class="page active" data-aos="fade-up">
+
+    <div class="hero">
+      <div class="hero-badge">Formal · Outdoor · Premium</div>
+      <h1>Jaket untuk<br>Segala Medan</h1>
+      <p>Tampil profesional di kantor, tetap tangguh di alam terbuka.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('produk').scrollIntoView({behavior:'smooth'})">
+          Lihat Koleksi
+        </button>
+        <!-- Ganti nomor WA di bawah ini -->
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn-outline">
+          💬 Order WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="section" id="produk" data-aos="fade-up">
+      <div class="section-title">Koleksi Produk</div>
+      <div class="section-sub">Klik produk untuk melihat detail lengkap dan artikel</div>
+      <div id="prod-grid"></div>
+    </div>
+
+    <div class="section" style="padding-top:0;" data-aos="fade-up">
+      <div class="section-title">Keunggulan Kami</div>
+      <div class="section-sub">Alasan memilih jaket kami</div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">💧</div>
+          <div class="feature-title">Anti Air</div>
+          <div class="feature-desc">Material waterproof tahan hujan deras hingga beberapa jam</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💨</div>
+          <div class="feature-title">Anti Angin</div>
+          <div class="feature-desc">Lapisan windproof untuk perlindungan ekstra di luar ruangan</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">👕</div>
+          <div class="feature-title">Nyaman Seharian</div>
+          <div class="feature-desc">Bahan premium breathable, tidak gerah meski dipakai lama</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏅</div>
+          <div class="feature-title">Garansi 6 Bulan</div>
+          <div class="feature-desc">Garansi jahitan 6 bulan untuk setiap produk yang dibeli</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0;" data-aos="fade-up">
+      <div class="section-title">Testimoni Pelanggan</div>
+      <div class="section-sub">Kata mereka tentang produk kami</div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Kualitas jahitan rapi, bahan tebal tapi tidak panas. Cocok untuk hiking dan kerja."
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">AR</div>
+            <div class="testi-name">Andi R. · Surabaya</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★☆</div>
+          <div class="testi-text">"Desainnya formal tapi tetap fleksibel. Saya pakai ke kantor dan traveling, oke
+            banget!"</div>
+          <div class="testi-author">
+            <div class="testi-avatar">DS</div>
+            <div class="testi-name">Dina S. · Jakarta</div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Sudah order 2 kali. Pengiriman cepat, packaging aman, jaket persis seperti foto."
+          </div>
+          <div class="testi-author">
+            <div class="testi-avatar">RH</div>
+            <div class="testi-name">Riko H. · Bandung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:0;" data-aos="fade-up">
+      <div class="cta-banner">
+        <h3>Siap Order Sekarang?</h3>
+        <p>Hubungi kami langsung via WhatsApp untuk konsultasi ukuran & warna</p>
+        <!-- Ganti nomor WA di bawah ini -->
+        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20tentang%20jaket" target="_blank"
+          class="btn-wa-big">
+          💬 Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HALAMAN DETAIL -->
+  <div id="page-detail" class="page" data-aos="fade-up">
+    <div class="detail-wrap">
+      <button class="back-btn" onclick="showHome()">← Kembali ke semua produk</button>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo -->
+    <div class="footer-col footer-brand">
+      <img src="../pic/upscalemedia-transformed.png"
+           alt="JaketKu"
+           class="footer-logo">
+    </div>
+
+    
+
+    <!-- About Us -->
+    <div class="footer-col">
+      <h3>About Us</h3>
+      <p>
+        At PAINE Equipment, we believe that nature is more than just a place to visit—it is a home for those who crave freedom. Born from a shared love for towering peaks, tranquil valleys, and the uncharted trails in between, we exist to equip you for every step of your journey.
+We don’t just create outdoor gear; we build a bridge between you and the wilderness. With designs that prioritize functionality, durability, and comfort, our products are crafted to withstand the harshest elements, allowing you to focus on what truly matters: the experience right in front of you.
+Go further. Push harder. Because the true adventure begins the moment you step out of your comfort zone
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h3>Get In Touch</h3>
+
+      <p>📍 Surabaya, Jawa Timur - Indonesia</p>
+      <p>📞 0812-3456-7890</p>
+      <p>✉️ info@jaketku.com</p>
+
+      <div class="social-icons">
+        <a href="#">📱</a>
+        <a href="#">📷</a>
+        <a href="#">🎵</a>
+        <a href="#">▶️</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    Copyright © 2026 JaketKu.
+  </div>
+</footer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      once: false,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  </script>
+  <script>
+    // ============================================================
+    // DATA PRODUK — Edit bagian ini sesuai produk Anda
+    // ============================================================
+const categories = [
+  {
+    nama: "Outdoor",
+    products: [
+      {
+        id: 1,
+        nama: "Tenda Gunung Pro",
+        tagline: "4 Orang · Waterproof",
+        badge: "Best Seller",
+        badgeClass: "badge-blue",
+        harga: "Rp 850.000",
+        gambar: "../pic/contoh1.jpg",
+        featured: true,
+        // FIX 2: Tambahkan spesifikasi & artikel di setiap produk
+        spesifikasi: [
+          { label: "Kapasitas",   val: "4 Orang" },
+          { label: "Bahan",       val: "Nylon 210T + Polyester" },
+          { label: "Waterproof",  val: "3.000mm water column" },
+          { label: "Berat",       val: "±2.8 kg" },
+          { label: "Ukuran",      val: "220 x 200 x 130 cm" },
+          { label: "Garansi",     val: "6 bulan" },
+        ],
+        artikel: {
+          judul: "Tenda Gunung Pro: teman setia di puncak manapun",
+          isi: [
+            "Tenda Gunung Pro dirancang untuk menghadapi kondisi ekstrem di ketinggian. Material nylon 210T yang ringan namun kuat mampu menahan angin kencang dan hujan deras sekaligus.",
+            "Sistem waterproof 3.000mm memastikan bagian dalam tenda tetap kering sepanjang malam. Jahitan taped seam di seluruh sambungan mencegah kebocoran sekecil apapun.",
+            "Dengan kapasitas 4 orang dan setup system yang mudah, tenda ini cocok untuk pendakian keluarga maupun tim. Dapat dipasang dalam waktu kurang dari 10 menit bahkan dalam kondisi gelap.",
+          ]
+        }
+      },
+      {
+        id: 2,
+        nama: "Sleeping Bag Extreme",
+        tagline: "Hangat hingga -5°C",
+        badge: "Terlaris",
+        badgeClass: "badge-green",
+        harga: "Rp 350.000",
+        gambar: "../pic/con2.jpg",
+        featured: false,
+        spesifikasi: [
+          { label: "Rating Suhu",  val: "Comfort -5°C / Extreme -10°C" },
+          { label: "Bahan Luar",   val: "Polyester 190T" },
+          { label: "Isian",        val: "Hollow Fiber 300gsm" },
+          { label: "Berat",        val: "±1.2 kg" },
+          { label: "Ukuran Lipat", val: "30 x 20 cm" },
+          { label: "Garansi",      val: "6 bulan" },
+        ],
+        artikel: {
+          judul: "Sleeping Bag Extreme: tidur nyaman di suhu beku",
+          isi: [
+            "Sleeping Bag Extreme hadir untuk memenuhi kebutuhan pendaki yang sering menghadapi suhu dingin ekstrem. Dengan rating comfort hingga -5°C, tidur di puncak gunung bukan lagi mimpi yang menyiksa.",
+            "Isian hollow fiber 300gsm memberikan insulasi panas yang merata ke seluruh tubuh tanpa menambah berat berlebihan. Bahan luar polyester 190T tahan air ringan dan mudah dibersihkan.",
+            "Desain mummy shape memaksimalkan retensi panas di area kepala dan bahu. Dilengkapi ritsleting dua arah yang bisa dibuka dari dalam untuk ventilasi saat cuaca tidak terlalu dingin.",
+          ]
+        }
+      },
+      {
+        id: 3,
+        nama: "Carrier 60L",
+        tagline: "Kapasitas Besar",
+        badge: "New",
+        badgeClass: "badge-navy",
+        harga: "Rp 650.000",
+        gambar: "../pic/con3.jpg",
+        featured: false,
+        spesifikasi: [
+          { label: "Kapasitas",    val: "60 Liter" },
+          { label: "Bahan",        val: "Cordura 600D" },
+          { label: "Waterproof",   val: "Rain cover included" },
+          { label: "Berat",        val: "±1.5 kg" },
+          { label: "Tinggi Ideal", val: "165 - 185 cm" },
+          { label: "Garansi",      val: "6 bulan" },
+        ],
+        artikel: {
+          judul: "Carrier 60L: bawa semua yang kamu butuhkan",
+          isi: [
+            "Carrier 60L adalah solusi sempurna untuk perjalanan panjang 3-5 hari. Volume 60 liter memberikan ruang yang cukup untuk semua perlengkapan camping tanpa harus meninggalkan barang penting.",
+            "Material Cordura 600D yang terkenal dengan ketahanannya terhadap abrasi memastikan carrier ini tahan lama meski dipakai di medan berbatu. Dilengkapi rain cover untuk perlindungan dari hujan.",
+            "Sistem suspensi ergonomis dengan back panel berjaring memaksimalkan sirkulasi udara di punggung, mengurangi keringat dan kelelahan saat membawa beban berat dalam jarak jauh.",
+          ]
+        }
+      }
+    ]
+  },
+  {
+    nama: "Equipment",
+    products: [
+      {
+        id: 4,
+        nama: "Kompor Portable",
+        tagline: "Ringan & Praktis",
+        badge: "Best Seller",
+        badgeClass: "badge-blue",
+        harga: "Rp 220.000",
+        gambar: "../pic/jak1.jpg",
+        featured: false,
+        spesifikasi: [
+          { label: "Bahan",        val: "Stainless Steel + Aluminium" },
+          { label: "Berat",        val: "±85 gram" },
+          { label: "Output BTU",   val: "10.000 BTU/hr" },
+          { label: "Kompatibel",   val: "Kaleng gas standar 230g" },
+          { label: "Ukuran Lipat", val: "7 x 7 cm" },
+          { label: "Garansi",      val: "3 bulan" },
+        ],
+        artikel: {
+          judul: "Kompor Portable: masak di mana saja, kapan saja",
+          isi: [
+            "Kompor Portable ini adalah pilihan terbaik bagi pendaki dan camper yang tidak mau berkompromi soal makanan hangat di alam bebas. Dengan berat hanya 85 gram, kompor ini nyaris tidak terasa di dalam carrier.",
+            "Output 10.000 BTU/hr memastikan air mendidih dalam waktu singkat bahkan di ketinggian di mana tekanan udara lebih rendah. Konsumsi gas efisien untuk memasak hingga 10-12 kali dari satu kaleng 230g.",
+            "Sistem lipat yang simpel memudahkan penyimpanan dan pemasangan. Kaki penopang yang lebar memberikan stabilitas ekstra saat memasak di permukaan tidak rata.",
+          ]
+        }
+      },
+      {
+        id: 5,
+        nama: "Headlamp Outdoor",
+        tagline: "Rechargeable",
+        badge: "Terlaris",
+        badgeClass: "badge-green",
+        harga: "Rp 120.000",
+        gambar: "../pic/jak2.jpg",
+        featured: false,
+        spesifikasi: [
+          { label: "Kecerahan",    val: "500 Lumen (max)" },
+          { label: "Baterai",      val: "USB-C Rechargeable 2000mAh" },
+          { label: "Mode",         val: "High / Medium / Low / Red / SOS" },
+          { label: "Tahan Air",    val: "IPX4" },
+          { label: "Berat",        val: "±90 gram" },
+          { label: "Garansi",      val: "3 bulan" },
+        ],
+        artikel: {
+          judul: "Headlamp Outdoor: terangi jalanmu di kegelapan",
+          isi: [
+            "Headlamp Outdoor dengan kecerahan 500 lumen ini memberikan penerangan yang cukup untuk navigasi malam di medan apapun. Mode SOS terintegrasi sangat berguna dalam situasi darurat.",
+            "Baterai built-in 2000mAh yang diisi via USB-C memungkinkan pengisian ulang menggunakan power bank di perjalanan. Tidak perlu lagi repot membawa baterai AA cadangan.",
+            "Rating IPX4 menjamin headlamp tetap berfungsi meski terkena percikan air atau gerimis. Sudut tilt 45° memudahkan penyesuaian arah cahaya sesuai kebutuhan aktivitas.",
+          ]
+        }
+      },
+      {
+        id: 6,
+        nama: "Trekking Pole",
+        tagline: "Aluminium Alloy",
+        badge: "New",
+        badgeClass: "badge-navy",
+        harga: "Rp 180.000",
+        gambar: "../pic/jak3.jpg",
+        featured: false,
+        spesifikasi: [
+          { label: "Bahan",        val: "Aluminium Alloy 7075" },
+          { label: "Berat",        val: "±260 gram/pasang" },
+          { label: "Panjang",      val: "65 - 135 cm (adjustable)" },
+          { label: "Ujung",        val: "Carbide tip + basket" },
+          { label: "Handle",       val: "EVA foam anti-slip" },
+          { label: "Garansi",      val: "3 bulan" },
+        ],
+        artikel: {
+          judul: "Trekking Pole: jaga keseimbangan di setiap langkah",
+          isi: [
+            "Trekking Pole berbahan aluminium alloy 7075 ini menawarkan kombinasi sempurna antara kekuatan dan bobot ringan. Dengan berat hanya 260 gram per pasang, beban di tangan terasa minimal sepanjang perjalanan.",
+            "Sistem adjustable 65-135 cm memudahkan penyesuaian panjang sesuai tinggi badan dan kondisi medan. Kunci twist-lock yang kuat memastikan panjang tidak berubah saat digunakan di turunan curam.",
+            "Handle EVA foam yang ergonomis menyerap keringat dan getaran untuk kenyamanan genggaman jangka panjang. Ujung carbide yang tajam memberikan grip yang baik di berbagai permukaan termasuk batu dan es.",
+          ]
+        }
+      }
+    ]
+  }
+];
+ 
+// ============================================================
+// RENDER KARTU PRODUK DI HALAMAN UTAMA
+// ============================================================
+function renderGrid() {
+  const container = document.getElementById('prod-grid');
+  container.innerHTML = '';
+ 
+  categories.forEach(category => {
+    const categorySection = document.createElement('div');
+categorySection.innerHTML = `
+  <h2 class="category-title" data-aos="fade-up">
+    ${category.nama}
+  </h2>
+
+  <div class="prod-grid category-grid" data-aos="fade-up">
+  </div>
+`;
+ 
+    const grid = categorySection.querySelector('.category-grid');
+ 
+    category.products.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'prod-card' + (p.featured ? ' featured' : '');
+      card.innerHTML = `
+        <div class="prod-card-img">
+          <img src="${p.gambar}" alt="${p.nama}">
+        </div>
+        <div class="prod-card-body">
+          <span class="badge ${p.badgeClass}">${p.badge}</span>
+          <div class="prod-name">${p.nama}</div>
+          <div class="prod-sub">${p.tagline}</div>
+          <div class="prod-footer">
+            <span class="prod-price">${p.harga}</span>
+            <span class="prod-arrow">→</span>
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', () => showDetail(p.id));
+      grid.appendChild(card);
+    });
+ 
+    container.appendChild(categorySection);
+  });
+}
+ 
+// ============================================================
+// TAMPILKAN HALAMAN DETAIL
+// ============================================================
+function showDetail(id) {
+  lastScrollPosition = window.scrollY;
+ 
+  const p = categories
+    .flatMap(cat => cat.products)
+    .find(product => product.id === id);
+ 
+  if (!p) return;
+ 
+  const specsHtml = p.spesifikasi.map(s => `
+    <div class="spec-row">
+      <span class="spec-label">${s.label}</span>
+      <span class="spec-val">${s.val}</span>
+    </div>
+  `).join('');
+ 
+  const parasHtml = p.artikel.isi.map(para =>
+    `<p class="artikel-para">${para}</p>`
+  ).join('');
+ 
+  const waLink = `https://wa.me/6281234567890?text=Halo,%20saya%20mau%20order%20${encodeURIComponent(p.nama)}%20seharga%20${encodeURIComponent(p.harga)}`;
+ 
+  document.getElementById('detail-content').innerHTML = `
+    <div class="detail-img">
+      <img src="${p.gambar}" alt="${p.nama}">
+    </div>
+    <div class="detail-header">
+      <div>
+        <span class="badge ${p.badgeClass}" style="margin-bottom:8px;display:inline-block;">${p.badge}</span>
+        <div class="detail-name">${p.nama}</div>
+        <div class="detail-tag">${p.tagline}</div>
+      </div>
+      <div class="detail-price">${p.harga}</div>
+    </div>
+ 
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;">Spesifikasi</div>
+    <div class="spec-card">${specsHtml}</div>
+ 
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;">Artikel Produk</div>
+    <div class="artikel-card">
+      <div class="artikel-title">${p.artikel.judul}</div>
+      ${parasHtml}
+    </div>
+ 
+    <a href="${waLink}" target="_blank" class="btn-order">
+      💬 Order ${p.nama} via WhatsApp
+    </a>
+  `;
+ 
+  document.getElementById('page-home').classList.remove('active');
+  document.getElementById('page-detail').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+ 
+// ============================================================
+// KEMBALI KE HALAMAN UTAMA
+// ============================================================
+function showHome() {
+  document.getElementById('page-detail').classList.remove('active');
+  document.getElementById('page-home').classList.add('active');
+  setTimeout(() => { window.scrollTo(0, lastScrollPosition); }, 0);
+}
+ 
+renderGrid();
+
+
+  </script>
+</body>
+
+</html>
