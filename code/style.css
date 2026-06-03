@@ -49,6 +49,10 @@ img { max-width: 100%; display: block; }
    NAVBAR
    ============================================================ */
 
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
 nav{
   position:sticky;
   top:0;
@@ -67,6 +71,18 @@ nav{
 
   border-bottom:1px solid rgba(0,0,0,.08);
   box-shadow:0 4px 20px rgba(0,0,0,.04);
+}
+
+.nav-left{
+  display:none;
+}
+
+.hamburger{
+  background:none;
+  border:none;
+  font-size:30px;
+  cursor:pointer;
+  color:var(--text);
 }
 
 .nav-logo a{
@@ -99,7 +115,6 @@ nav{
   font-size:15px;
   font-weight:600;
   color:var(--text);
-  transition:.2s;
 }
 
 .nav-menu-btn:hover{
@@ -156,58 +171,55 @@ nav{
   margin-left:10px;
 }
 
+.icon-btn{
+  background:none;
+  border:none;
+  color:#111;
+  font-size:22px;
+  cursor:pointer;
+}
+
 /* ============================================================
-   MOBILE NAVBAR
+   MOBILE
    ============================================================ */
 
 @media (max-width:768px){
 
   nav{
-    height:auto;
-    padding:15px;
-    flex-direction:column;
-    gap:12px;
+    height:80px;
+    padding:0 18px;
   }
 
-  .logo-img{
-    height:55px;
+  .nav-left{
+    display:block;
   }
 
   .nav-center{
-    width:100%;
-    margin:0;
-    justify-content:center;
-    gap:16px;
-    flex-wrap:wrap;
+    display:none;
   }
 
-  .nav-menu-btn{
-    font-size:14px;
-  }
-
-  .nav-icons{
-    width:100%;
-    justify-content:center;
-  }
-
-  .search-box{
-    width:100%;
-    max-width:350px;
-  }
-
-  .search-box input{
-    width:100%;
-  }
-
-  .menu-content{
+  .nav-logo{
+    position:absolute;
     left:50%;
     transform:translateX(-50%);
   }
-}
 
-.icon-btn{
-  color:#111;
-  font-size:22px;
+  .logo-img{
+    height:50px;
+  }
+
+  .nav-icons{
+    gap:12px;
+    margin-left:auto;
+  }
+
+  .search-box{
+    display:none;
+  }
+
+  .icon-btn{
+    font-size:26px;
+  }
 }
 
 body.searching [data-aos] {
