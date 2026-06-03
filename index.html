@@ -14,62 +14,72 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-logo">
-      <a href="../code/paine1.html">
-        <img src="../pic/upscalemedia-transformed.png" alt="Logo JaketKu" class="logo-img">
-      </a>
-    </div>
+<nav>
+  <!-- Logo -->
+  <div class="nav-logo">
+    <a href="../code/paine1.html">
+      <img src="../pic/upscalemedia-transformed.png" alt="PAINE" class="logo-img">
+    </a>
+  </div>
 
-    <!-- Kanan: label + hamburger -->
-    <div class="nav-right" onclick="toggleMenu()">
-      <span class="nav-label">About Us</span>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Menu Tengah -->
+  <div class="nav-center">
+
+    <!-- CATEGORY -->
+    <div class="nav-dropdown-menu">
+      <button class="nav-menu-btn">
+        Category <i class="fa-solid fa-chevron-down"></i>
       </button>
+
+      <div class="menu-content">
+        <a href="#" onclick="filterCategory('Outdoor')">Outdoor</a>
+        <a href="#" onclick="filterCategory('Equipment')">Equipment</a>
+        <a href="#" onclick="filterCategory('all')">Semua Produk</a>
+      </div>
     </div>
 
-    <!-- Dropdown -->
-    <div class="nav-dropdown" id="nav-dropdown">
-      <div class="dropdown-title">Temukan Kami di</div>
+    <!-- CONTACT US -->
+    <div class="nav-dropdown-menu">
+      <button class="nav-menu-btn">
+        Contact Us <i class="fa-solid fa-chevron-down"></i>
+      </button>
 
-      <!-- WhatsApp -->
-      <a href="https://wa.me/6281234567890" target="_blank" class="dropdown-item">
-        <div class="dropdown-icon icon-wa">
-          <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div class="dropdown-info">
-          <div>WhatsApp</div>
-          <div class="dropdown-sub">Chat & Order langsung</div>
-        </div>
-      </a>
+      <div class="menu-content">
+        <a href="https://wa.me/6281234567890" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
 
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/paine.equipment?igsh=aXJscXl0Y3ZsbWc2&utm_source=qr" target="_blank" class="dropdown-item">
-        <div class="dropdown-icon icon-ig">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-        <div class="dropdown-info">
-          <div>Instagram</div>
-          <div class="dropdown-sub">@paine</div>
-        </div>
-      </a>
+        <a href="https://instagram.com/paine.equipment" target="_blank">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
 
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@paine.equipment?_r=1&_t=ZS-96mQqL3iuCS" target="_blank" class="dropdown-item">
-        <div class="dropdown-icon icon-tt">
-          <i class="fa-brands fa-tiktok"></i>
-        </div>
-        <div class="dropdown-info">
-          <div>TikTok</div>
-          <div class="dropdown-sub">@paine</div>
-        </div>
-      </a>
+        <a href="https://tiktok.com/@paine.equipment" target="_blank">
+          <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+      </div>
     </div>
-  </nav>
+
+  </div>
+
+  <!-- Kanan -->
+  <div class="nav-icons">
+
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari produk..."
+        onkeyup="searchProduct()"
+      >
+    </div>
+
+    <a href="#" class="icon-btn">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+  </div>
+</nav>
 
   <!-- Overlay penutup dropdown -->
   <div class="nav-overlay" id="nav-overlay" onclick="closeMenu()"></div>
@@ -177,7 +187,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col footer-brand">
-        <img src="../pic/upscalemedia-transformed.png" alt="JaketKu" class="footer-logo">
+        <img src="../pic/upscalemedia-transformed (1).png" alt="JaketKu" class="footer-logo">
       </div>
       <div class="footer-col">
         <h3>About Us</h3>
@@ -185,7 +195,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       </div>
       <div class="footer-col">
         <h3>Get In Touch</h3>
-        <p>📍 Surabaya, Jawa Timur - Indonesia</p>
+        <p>📍 Sumenep, Jawa Timur - Indonesia</p>
         <p>📞 0812-3456-7890</p>
         <p>✉️ info@jaketku.com</p>
         <div class="social-icons">
@@ -205,30 +215,88 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   <script>
     // ── HAMBURGER MENU ────────────────────────────────
-    function toggleMenu() {
-      const btn      = document.getElementById('hamburger');
-      const dropdown = document.getElementById('nav-dropdown');
-      const overlay  = document.getElementById('nav-overlay');
-      const isOpen   = dropdown.classList.contains('open');
-      if (isOpen) {
-        closeMenu();
-      } else {
-        btn.classList.add('open');
-        dropdown.classList.add('open');
-        overlay.classList.add('open');
-      }
+   let activeCategory = "all";
+
+function filterCategory(category){
+
+  activeCategory = category;
+
+  const container = document.getElementById('prod-grid');
+  container.innerHTML = '';
+
+  categories.forEach(cat => {
+
+    if(category !== 'all' && cat.nama !== category){
+      return;
     }
 
-    function closeMenu() {
-      document.getElementById('hamburger').classList.remove('open');
-      document.getElementById('nav-dropdown').classList.remove('open');
-      document.getElementById('nav-overlay').classList.remove('open');
-    }
+    const section = document.createElement('div');
 
-    // Tutup menu saat klik link di dalamnya
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-      item.addEventListener('click', closeMenu);
+    section.innerHTML = `
+      <h2 class="category-title">${cat.nama}</h2>
+      <div class="prod-grid category-grid"></div>
+    `;
+
+    const grid = section.querySelector('.category-grid');
+
+    cat.products.forEach(p => {
+
+      const card = document.createElement('div');
+      card.className = 'prod-card';
+
+      card.innerHTML = `
+        <div class="prod-card-img">
+          <img src="${p.gambar}">
+        </div>
+
+        <div class="prod-card-body">
+          <span class="badge ${p.badgeClass}">
+            ${p.badge}
+          </span>
+
+          <div class="prod-name">${p.nama}</div>
+          <div class="prod-sub">${p.tagline}</div>
+
+          <div class="prod-footer">
+            <span class="prod-price">${p.harga}</span>
+          </div>
+        </div>
+      `;
+
+      card.onclick = () => showDetail(p.id);
+
+      grid.appendChild(card);
     });
+
+    container.appendChild(section);
+  });
+}function searchProduct(){
+
+  const keyword =
+  document.getElementById("searchInput")
+  .value.toLowerCase();
+
+  // Aktifkan mode searching
+  if(keyword !== ""){
+    document.body.classList.add("searching");
+  } else {
+    document.body.classList.remove("searching");
+  }
+
+  document.querySelectorAll(".prod-card")
+  .forEach(card => {
+
+    const text =
+    card.innerText.toLowerCase();
+
+    card.style.display =
+    text.includes(keyword)
+    ? ""
+    : "none";
+
+  });
+
+}
 
     // ── DATA PRODUK ───────────────────────────────────
     let lastScrollPosition = 0;
@@ -540,6 +608,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     }
 
     renderGrid();
+
   </script>
 </body>
 </html>
